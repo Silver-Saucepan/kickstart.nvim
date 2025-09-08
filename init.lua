@@ -90,7 +90,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -158,7 +158,7 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 10
+vim.o.scrolloff = 5
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
@@ -247,6 +247,7 @@ rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-fugitive', -- The premier git plugin for vim
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -707,7 +708,6 @@ require('lazy').setup({
                     maxLineLength = 100,
                   },
                   mccabe = { enabled = false },
-                  pylsp_mypy = { enabled = true },
                 },
               },
             },
